@@ -8,7 +8,8 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "test": "jest",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "npm install express"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
