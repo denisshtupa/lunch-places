@@ -127,6 +127,7 @@
 import store from "../store/index.js";
 
 export default {
+  name: "LunchPlaceDetail",
   data() {
     return {
       user: "",
@@ -193,19 +194,21 @@ export default {
       });
     },
 
-     showToastReviewAdded(variant = "success", voterName) {
-      this.$bvToast.toast(`${voterName} has added new review for ${this.placeName}.`, {
-        title: "CREATED",
-        variant: variant,
-        solid: true
-      });
+    showToastReviewAdded(variant = "success", voterName) {
+      this.$bvToast.toast(
+        `${voterName} has added new review for ${this.placeName}.`,
+        {
+          title: "CREATED",
+          variant: variant,
+          solid: true,
+        }
+      );
     },
   },
 };
 </script>
 
 <style>
-
 button:hover {
   opacity: 0.8;
 }

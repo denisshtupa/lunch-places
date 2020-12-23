@@ -1,8 +1,8 @@
 
 <template>
   <div>
-    <b-jumbotron style="font-family: verdana">
-      <h1 id="title-lunch-places">Lunch Places Overview</h1>
+    <div class="jumbotron" style="font-family: verdana">
+      <h1 id="title-lunch-places">Lunch places overview</h1>
 
       <div class="container-fluid">
         <table class="table table-stripped">
@@ -11,7 +11,7 @@
             <th>Description for place</th>
             <th>Address</th>
             <th>Place menu</th>
-            <th style="text-align: center;">Average vote</th>
+            <th style="text-align: center">Average vote</th>
             <th>Actions</th>
           </thead>
 
@@ -66,11 +66,11 @@
       </div>
 
       <div id="add-new-place">
-        <b-button variant="primary" @click="navigateToAddPlace()"
-          >Add new place</b-button
-        >
+        <button class="btn btn-primary" @click="navigateToAddPlace()">
+          Add new place
+        </button>
       </div>
-    </b-jumbotron>
+    </div>
   </div>
 </template>
 
@@ -79,6 +79,7 @@
 import store from "../store/index.js";
 
 export default {
+  name: "LunchPlacesOverview",
   data() {
     return {
       lunchPlaces: store.state.lunchPlaces,
@@ -130,7 +131,6 @@ export default {
 </script>
 
 <style>
-
 #add-new-place > button:hover {
   opacity: 0.8;
 }

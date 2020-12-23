@@ -1,13 +1,13 @@
 
 <template>
   <div class="jumbotron">
-    <div class="col-sm-12" style="border-radius: 10px;">
-      <b-card bg-variant="info" style="padding-left: 20px;">
+    <div class="col-sm-12" style="border-radius: 10px">
+      <b-card bg-variant="info" style="padding-left: 20px">
         <b-form-group
           label="Place name"
           label-for="nested-name"
           label-cols-sm="3"
-          style="flex-direction: column; text-align: left;"
+          style="flex-direction: column; text-align: left"
         >
           <b-form-input
             class="col-sm-8"
@@ -21,7 +21,7 @@
           label="Description"
           label-for="nested-description"
           label-cols-sm="3"
-          style="flex-direction: column; text-align: left;"
+          style="flex-direction: column; text-align: left"
         >
           <b-form-input
             class="col-sm-8"
@@ -35,7 +35,7 @@
           label="Address of place"
           label-for="nested-address"
           label-cols-sm="3"
-          style="flex-direction: column; text-align: left;"
+          style="flex-direction: column; text-align: left"
         >
           <b-form-input
             class="col-sm-8"
@@ -49,7 +49,7 @@
           label="Link of menu"
           label-for="nested-link-menu"
           label-cols-sm="3"
-          style="flex-direction: column; text-align: left;"
+          style="flex-direction: column; text-align: left"
         >
           <b-form-input
             class="col-sm-8"
@@ -61,19 +61,18 @@
       </b-card>
 
       <div id="save-place">
-        <b-button
-          variant="success"
-          class="col-sm-3"
+        <button
+          class="btn btn-success col-sm-3"
           style="margin-right: 10px"
           :disabled="!placeName || !description || !address || !link"
           @click="addPlace()"
-          >Save place</b-button
         >
-        <b-button
-          class="col-sm-3"
-          variant="warning"
+          Save place
+        </button>
+        <button
+          class="btn btn-warning col-sm-3"
           @click="goToPlaceOverview()"
-          >Back to places overview</b-button
+          >Back to places overview</button
         >
       </div>
     </div>
@@ -84,6 +83,7 @@
 import store from "../store/index.js";
 
 export default {
+  name: "AddPlace",
   data() {
     return {
       lunchPlaces: store.state.lunchPlaces,
@@ -170,5 +170,4 @@ export default {
 .col-sm-12 > .card {
   border-radius: 20px;
 }
-
 </style>

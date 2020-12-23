@@ -1,10 +1,5 @@
 <template>
   <div class="main-container">
-    <!-- <div id="nav">
-      <router-link to="/lunch-place">Place Overview</router-link> |
-      <router-link to="/lunch-place-detail/:placeId">Place Detail</router-link>|
-      <router-link to="/lunch-place-add">Add-place</router-link>
-    </div> -->
     <router-view> </router-view>
   </div>
 </template>
