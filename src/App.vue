@@ -8,7 +8,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
 .main-container {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

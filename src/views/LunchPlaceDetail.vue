@@ -61,9 +61,17 @@
     <div>
       <div id="save-place">
         <b-button
+          v-if="votes.length > 0"
+          variant="info"
+          class="col-sm-2"
+          style="margin-right: 15px"
+          @click="clearReviews()"
+          >Clear reviews</b-button
+        >
+        <b-button
           variant="success"
-          class="col-sm-3"
-          style="margin-right: 10px"
+          class="col-sm-2"
+          style="margin-right: 15px"
           v-b-modal.modal-1
           >Add review</b-button
         >
@@ -172,13 +180,21 @@ export default {
         voterName: this.user,
         voterComment: this.comment,
         voteValue: this.voteValue,
-        voteId: this.votes.length -1,
+        voteId: this.votes.length,
         index: this.placeId,
       };
 
       this.$store.dispatch("addReview", review);
       this.showToastReviewAdded("success", this.user);
       this.initFormReview();
+    },
+
+    clearReviews() {
+      this.$store.dispatch("deleteAllReviews", this.placeId);
+      this.showToastClearReviews("success");
+
+      this.votes = store.state.lunchPlaces[this.$router.history.current.params.placeId]
+          .votes
     },
 
     initFormReview() {
@@ -204,6 +220,13 @@ export default {
           solid: true,
         }
       );
+    },
+    showToastClearReviews(variant = "success") {
+      this.$bvToast.toast(`All reviews are deleted for ${this.placeName}.`, {
+        title: "DELETED",
+        variant: variant,
+        solid: true,
+      });
     },
   },
 };

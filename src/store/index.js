@@ -130,6 +130,9 @@ export default new Vuex.Store({
     deleteReview(context, voteObject) {
       context.commit('deleteReview', voteObject);
     },
+    deleteAllReviews(context, placeId) {
+      context.commit('deleteAllReviews', placeId);
+    },
 
     addPlace(context, placeObject) {
       context.commit('addPlace', placeObject);
@@ -150,6 +153,16 @@ export default new Vuex.Store({
     deleteReview(state, deleteObject) {
       let idx = state.lunchPlaces[deleteObject.placeId].votes.findIndex(x => x.voteId == deleteObject.voteIndex);
       state.lunchPlaces[deleteObject.placeId].votes.splice(idx, 1);
+    },
+    deleteAllReviews(state, placeId) {
+      // let length = state.lunchPlaces[placeId].votes;
+      // state.lunchPlaces[placeId].votes.splice(0, length);
+
+      while(state.lunchPlaces[placeId].votes.length > 0) {
+        state.lunchPlaces[placeId].votes.pop();
+    }
+
+      console.log("state.lunchPlaces[placeId].votes", state.lunchPlaces[placeId].votes) 
     },
 
     addPlace(state, placeObject) {
