@@ -172,6 +172,7 @@ export default {
         voterName: this.user,
         voterComment: this.comment,
         voteValue: this.voteValue,
+        voteId: this.votes.length -1,
         index: this.placeId,
       };
 

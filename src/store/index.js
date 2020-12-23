@@ -143,7 +143,8 @@ export default new Vuex.Store({
       state.lunchPlaces[voteObject.index].votes.push({
         voterName: voteObject.voterName,
         voterComment: voteObject.voterComment,
-        voteValue: Number(voteObject.voteValue)
+        voteValue: Number(voteObject.voteValue),
+        voteId: voteObject.voteId
       });
     },
     deleteReview(state, deleteObject) {
